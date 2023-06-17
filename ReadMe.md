@@ -56,7 +56,7 @@ kubectl get pod -o wide
 
 - Get Pods By Label
 ```
-kubectl get pods -l <label_name>=value
+kubectl get object_name(service,pod,deployment etc) -l <label_name>=value
 ```
 
 - Delte Pods using label
@@ -64,3 +64,11 @@ kubectl get pods -l <label_name>=value
 kubectl delete pod -l <label_name>=value
 ```
 
+
+- Set based selector in Kubernetes
+```
+kubectl get pods 'label_name in (val_1,val_2)'
+```
+
+
+#### Kubernetes Networking
