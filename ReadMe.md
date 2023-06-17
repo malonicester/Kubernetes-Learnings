@@ -71,4 +71,10 @@ kubectl get pods 'label_name in (val_1,val_2)'
 ```
 
 
-#### Kubernetes Networking
+### Kubernetes Networking
+
+
+- Accessing terminal of runnig container inside a pod
+```
+kubectl exec <pod_name> -c <container_name> -it -- /bin/bash
+```
