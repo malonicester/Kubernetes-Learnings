@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: sample-depl
+  labels:
+     name: sample
+     lang: java
+spec:
+  replicas: 3
+  selector: 
+    matchLabels: 
+      name: myApp
+      lang: js
+  template: 
+    metadata: 
+      name: test
+      labels: 
+        name: myApp
+        lang: js
+    spec:
+      containers: 
+      - name: sample-deploy
+        image: nginx:latest
+        ports:
+        - containerPort: 80
