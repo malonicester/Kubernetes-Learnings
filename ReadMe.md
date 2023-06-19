@@ -78,3 +78,10 @@ kubectl get pods 'label_name in (val_1,val_2)'
 ```
 kubectl exec <pod_name> -c <container_name> -it -- /bin/bash
 ```
+
+### Volumes in Kubernetes
+- Emptydir
+  - This type volumes is a empty directory present inside the pod and is shared among the containers running inside the pod.
+  - for example - if two containers are runnig inside a pod and a emptydir is used as volume then both will write in the same directory.
+  - As this is created outside the container it remains intact even if the container is destoryed.
+  - But if the pod is destoryed it will be destoryed for ever.
