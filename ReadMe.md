@@ -85,3 +85,13 @@ kubectl exec <pod_name> -c <container_name> -it -- /bin/bash
   - for example - if two containers are runnig inside a pod and a emptydir is used as volume then both will write in the same directory.
   - As this is created outside the container it remains intact even if the container is destoryed.
   - But if the pod is destoryed it will be destoryed for ever.
+
+- Persistent Volumes
+  - In case of volume types like emptydir and hostpath it is destoryed when the pod is destoryed. So the newly created pod coming from replicaset won't have that files.
+  - And an other case can be when a pod is destroyed it is not guranteed that the newly created pod can be created in any node inside the cluster.
+  - So we can create the volume inside the cluster so that the newly created pod can have access to the old pod files and data.
+  - Cloud Providers like AWS provide  EBS(Elastic Block Store) which can be divided 
+  accessed by EC2 instance only.
+
+### Config Map and Secrets
+- 
