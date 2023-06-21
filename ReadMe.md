@@ -94,4 +94,7 @@ kubectl exec <pod_name> -c <container_name> -it -- /bin/bash
   accessed by EC2 instance only.
 
 ### Config Map and Secrets
-- 
+- Create a config map
+```
+kubectl create configmap <map_name> --from-file=<file_name>
+```
